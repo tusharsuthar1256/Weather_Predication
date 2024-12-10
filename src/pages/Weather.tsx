@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CalendarCheck, Cloud, Droplet, Leaf, Sun, Wind, Airplay } from 'lucide-react';
+import { CalendarCheck, Cloud, Droplet, Leaf, Sun, Wind, Airplay, CloudRain, CloudLightning, CloudFog } from 'lucide-react';
 import { Card } from '../components/Card';
 import {
   LineChart,
@@ -205,39 +205,65 @@ export function Weather() {
   
           {/* Full Bottom Container for Air Quality & Sunrise/Sunset */}
           <div className="flex flex-col sm:flex-row gap-8 justify-center w-full">
-            {/* Air Quality Index */}
-            {airQuality && (
-              <Card className="w-full sm:w-[48%] bg-gray-900 dark:bg-white text-white dark:text-gray-900 mb-8">
-                <p className="text-xl font-semibold mb-4 flex justify-start items-center">
-                  <Airplay className="mr-3" />
-                  Air Quality Index
-                </p>
-                <hr className="mb-2" />
-                <div>
-                  <p>AQI: {airQuality.list[0].main.aqi}</p>
-                  <p>Index Status: {['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'][airQuality.list[0].main.aqi - 1]}</p>
-                </div>
-              </Card>
-            )}
   
-            {/* Sunrise & Sunset */}
+            {/* Rain Fall */}
             {weatherData && (
               <Card className="w-full sm:w-[48%] bg-gray-900 dark:bg-white text-white dark:text-gray-900 mb-8">
                 <p className="text-xl font-semibold mb-4 flex justify-start items-center">
                   <Sun className="mr-3" />
-                  Sunrise & Sunset
+                  Current Rainfall
                 </p>
                 <hr className="mb-2" />
-                <div className="flex justify-between">
-                  <div>
-                    <p>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString()}</p>
+                <div className="p-2">
+                    <Cloud className="h-12 w-12 text-blue-500" />
+                    <p className="text-lg font-semibold">
+                      {weatherData.rain ? `${weatherData.rain['1h']} mm` : "No Rain"}
+                    </p>
+                    <p className="text-gray-600">
+                      {weatherData.rain ? "Rain recorded in the last hour" : "No rainfall in the past hour"}
+                    </p>
                   </div>
-                  <div>
-                    <p>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString()}</p>
-                  </div>
-                </div>
               </Card>
             )}
+
+            {/* Air Quality Section */}
+            {airQuality && (
+  <Card className="w-full sm:w-[48%] bg-gray-900 dark:bg-white text-white dark:text-gray-900 mb-8">
+    <p className="text-xl font-semibold mb-4 flex justify-start items-center">
+      <Airplay className="mr-3" />
+      Air Quality Index
+    </p>
+    <hr className="mb-2" />
+    <div className="flex items-center space-x-4">
+      <div className="flex justify-between items-center w-full p-4">
+        <div>
+          {airQuality.list[0].main.aqi === 1 && <Sun className="text-yellow-500 h-14 w-14" />}
+          {airQuality.list[0].main.aqi === 2 && <Cloud className="text-green-500 h-14 w-14" />}
+          {airQuality.list[0].main.aqi === 3 && <CloudRain className="text-orange-500 h-14 w-14" />}
+          {airQuality.list[0].main.aqi === 4 && <CloudLightning className="text-red-500 h-14 w-14" />}
+          {airQuality.list[0].main.aqi === 5 && <CloudFog className="text-gray-700 h-14 w-14" />}
+        </div>
+        <div>
+          <p
+            className={`px-4 py-2 rounded-lg font-semibold text-white ${
+              airQuality.list[0].main.aqi === 1 ? 'bg-green-500' :
+              airQuality.list[0].main.aqi === 2 ? 'bg-yellow-500' :
+              airQuality.list[0].main.aqi === 3 ? 'bg-orange-500' :
+              airQuality.list[0].main.aqi === 4 ? 'bg-red-500' :
+              'bg-gray-700'
+            }`}
+          >
+            {['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'][airQuality.list[0].main.aqi - 1]}
+          </p>
+        </div>
+      </div>
+    </div>
+    <p className="pl-4 font-semibold">
+      Air Quality Index: {airQuality.list[0].main.aqi}
+    </p>
+  </Card>
+)}
+
           </div>
         </>
       ) : (
