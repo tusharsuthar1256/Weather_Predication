@@ -27,12 +27,15 @@ export const cropCoefficients = {
    } as const;
    
    // Reference evapotranspiration (ET0) values by season (mm/day)
-   export const seasonalEvapotranspiration = {
-     spring: 4.5,
-     summer: 6.0,
-     fall: 3.5,
-     winter: 2.0,
-   } as const;
+   // Reference evapotranspiration (ET0) values by season (mm/day)
+export const seasonalEvapotranspiration = {
+  spring: 4.5,
+  summer: 6.0,
+  fall: 3.5,
+  winter: 2.0,
+  monsoon: 3.0, 
+} as const;
+
    
    // Field capacity and wilting point for different soil types (% volume)
    export const soilProperties = {
