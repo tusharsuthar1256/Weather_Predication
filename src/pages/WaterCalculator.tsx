@@ -77,6 +77,7 @@ export const WaterPage: React.FC = () => {
               <option value="spring">Spring</option>
               <option value="summer">Summer</option>
               <option value="fall">Fall</option>
+              <option value="monsoon">Monsoon</option>
               <option value="winter">Winter</option>
             </select>
           </div>
