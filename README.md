@@ -41,10 +41,9 @@ GreenCalc is a React + TypeScript (TSX) web application designed to provide digi
 ## Technology Stack
 
 * **React** (v18+) with **TypeScript** (tsx)
-* **Context API** for state management
 * **Tailwind CSS** for styling (optional, adjust as needed)
 * **Chart.js** or **Recharts** for graphical data visualization
-* **OpenWeatherMap API** (or similar) for weather data
+* **OpenWeatherMap API** for weather data
 
 ## Getting Started
 
