@@ -168,19 +168,3 @@ GreenCalc uses the React Context API to manage global state, including:
 * Soil moisture inputs and results
 
 This approach centralizes state management, making data accessible across pages without prop drilling.
-
-## Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: \`git commit -m "Add new feature"
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a Pull Request
-
-Please ensure code is well-documented and tested where applicable.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
