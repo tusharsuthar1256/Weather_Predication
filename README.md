@@ -18,9 +18,7 @@ GreenCalc is a React + TypeScript (TSX) web application designed to provide digi
   * [Weather Prediction](#2-weather-prediction)
   * [Water Consumption Calculator](#3-water-consumption-calculator)
   * [Soil Moisture Calculator](#4-soil-moisture-calculator)
-* [Context API Usage](#context-api-usage)
-* [Contributing](#contributing)
-* [License](#license)
+
 
 ## Features
 
