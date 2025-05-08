@@ -2,6 +2,10 @@
 
 GreenCalc is a React + TypeScript (TSX) web application designed to provide digital solutions for irrigation scheduling and water management in agriculture. By leveraging real-time weather data, crop-specific water requirements, and soil moisture analysis, GreenCalc helps farmers optimize irrigation practices, conserve water, and improve crop health.
 
+## 🌐 Live Demo
+>[Click here](https://weather-pre1.netlify.app)
+
+
 ## Table of Contents
 
 * [Features](#features)
