@@ -158,13 +158,3 @@ The Home page introduces the project and outlines its objectives:
   * Watering recommendation (e.g., next watering in 3 days)
   * Soil moisture level graph
   * Plant health indicator
-
-## Context API Usage
-
-GreenCalc uses the React Context API to manage global state, including:
-
-* User-selected city for weather data
-* Field and crop parameters
-* Soil moisture inputs and results
-
-This approach centralizes state management, making data accessible across pages without prop drilling.
